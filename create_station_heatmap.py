@@ -1,6 +1,5 @@
 import seaborn as sns
 import pandas as pd
-%matplotlib inline
 
 def create_station_heatmap(station_name, turnstile_data):
     ''' Heat map for a station by day of week and by hour
