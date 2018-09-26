@@ -48,11 +48,17 @@ def read_mta_turnstile(start='20180501', end='20180531'):
     # set all hourly entires < 0 to negative
     df.loc[df.hourly_entries < 0,'hourly_entries'] = np.nan
     df.loc[df.hourly_exits < 0,'hourly_exits'] = np.nan
+    df.loc[df.hourly_entries > 100000,'hourly_entries'] = np.nan
+    df.loc[df.hourly_exits > 100000,'hourly_exits'] = np.nan
     
     # reset the indicies as they repeat for each download
     df.reset_index(inplace=True)
     return df
-
+'''
+def mta_station_daily(df):
+    df = df.groupby(['STATION','DATE'])[['ENTRIES','EXITS'].sum().reset_index()
+    return df
+'''
 '''
 # example usage
 mta = read_mta_turnstile()
