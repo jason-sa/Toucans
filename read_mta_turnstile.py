@@ -48,6 +48,8 @@ def read_mta_turnstile(start='20180501', end='20180531'):
     df.loc[df.hourly_entries < 0,'hourly_entries'] = np.nan
     df.loc[df.hourly_exits < 0,'hourly_exits'] = np.nan
     
+    # reset the indicies as they repeat for each download
+    df.reset_index(inplace=True)
     return df
 
 # example usage
