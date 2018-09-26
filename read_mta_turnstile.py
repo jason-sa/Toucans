@@ -53,7 +53,9 @@ def read_mta_turnstile(start='20180501', end='20180531'):
     df.reset_index(inplace=True)
     return df
 
+'''
 # example usage
 mta = read_mta_turnstile()
 #mta = read_mta_turnstile('20180501','20180508')
 print(mta.info())
+'''
