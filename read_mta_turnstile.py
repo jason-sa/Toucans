@@ -38,7 +38,7 @@ def read_mta_turnstile(start='20180501', end='20180531'):
     df.rename(columns={'C/A':'CA'}, inplace=True) # rename column for easier (dot) access
 
     # group df into (CA, UNIT, SCP, STATION)
-    df['date_time'] = pd.to_datetime(df.DATE + ' ' + df.TIME)
+    df['date_time'] = pd.to_datetime(df.DATE + ' ' + df.TIME, format='%m/%d/%Y %H:%M:%S')
     df['entries_offset'] = df.groupby(['CA','UNIT','SCP','STATION'])['ENTRIES'].shift(-1) # get everything one row down and shift up
     df['exits_offset'] = df.groupby(['CA','UNIT','SCP','STATION'])['EXITS'].shift(-1)
     df['hourly_entries'] = df.entries_offset - df.ENTRIES
