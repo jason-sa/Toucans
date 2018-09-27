@@ -29,8 +29,8 @@ def merge_station_company(stations, companies, turnstiles):
     
     # calculate mean / max stats by station
     station_hour_day = turnstiles.groupby(['STATION','DATE','hour'])['hourly_entries'].sum()
-    station_mean = station_hour_day.groupby('STATION')['hourly_entries'].mean()
-    station_max = station_hour_day.groupby('STATION')['hourly_entries'].max()
+    station_mean = station_hour_day.groupby('STATION').mean()
+    station_max = station_hour_day.groupby('STATION').max()
 
     # be aware of data errors -- need to determine if further cleaning is needed. (2996/6622)
     station_companies = station_companies.join(station_mean, how='inner')
