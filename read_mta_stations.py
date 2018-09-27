@@ -9,6 +9,7 @@ def read_mta_stations():
     df = pd.read_csv("mta_stations.csv")
     df.rename(columns = {"OBJECTID": "key", "NAME":"name", "the_geom":"location"}, inplace = True)
     
+    # Parsing the location data into two separate columns "lat" and "lon"
     df["lon"] = df.location.str.split().str.get(1).str.strip('(')
     df["lat"] = df.location.str.split().str.get(2).str.strip(')')
     df = df[["key","name","LINE","lon","lat"]]
