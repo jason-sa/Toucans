@@ -2,7 +2,7 @@ import numpy as np
 from geopy.distance import geodesic
 import pandas as pd
 
-def merge_station_company(stations, companies, turnstiles):
+def merge_station_company(stations, companies, turnstiles, thresh=0.25):
     # agg to station level taking the min lat/long
     station_agg = stations.groupby('name').min().reset_index()[['name','lon','lat']]
 
@@ -28,6 +28,7 @@ def merge_station_company(stations, companies, turnstiles):
     station_companies['comp_lat_lon'] = list(zip(station_companies.LAT, station_companies.LON))
     station_companies['station_lat_lon'] = list(zip(station_companies.lat, station_companies.lon))
     station_companies['distance'] = [geodesic(v, station_companies.iloc[k,8]).miles for k, v in enumerate(station_companies.comp_lat_lon)]
+    station_companies = station_companies[station_companies.distance <= thresh]
     
     # calculate mean / max stats by station
     station_hour_day = turnstiles.groupby(['STATION','DATE','hour'])['hourly_entries'].sum()
