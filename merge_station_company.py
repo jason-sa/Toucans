@@ -28,8 +28,9 @@ def merge_station_company(stations, companies, turnstiles):
     station_companies['distance'] = [geodesic(v, station_companies.iloc[k,10]).miles for k, v in enumerate(station_companies.comp_lat_lon)]
     
     # calculate mean / max stats by station
-    station_mean = turnstiles.groupby('STATION')['hourly_entries'].mean()
-    station_max = turnstiles.groupby('STATION')['hourly_entries'].max()
+    station_hour_day = turnstiles.groupby(['STATION','DATE','hour'])['hourly_entries'].sum()
+    station_mean = station_hour_day.groupby('STATION')['hourly_entries'].mean()
+    station_max = station_hour_day.groupby('STATION')['hourly_entries'].max()
 
     # be aware of data errors -- need to determine if further cleaning is needed. (2996/6622)
     station_companies = station_companies.join(station_mean, how='inner')
