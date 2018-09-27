@@ -40,12 +40,20 @@ def create_station_heatmap(station_name, turnstile_data):
     hm2 = hm2.pivot(index='hour_of_day',columns='day_name',values='hourly_exits')
 
     xticks = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    yticks = ['Morning', 'Noon', 'Evening']
     
-    fig, ax = plt.subplots(1,2, figsize=(12, 4))
-    fig.suptitle('Heatmap of Passenger Volume')
+    fig, ax = plt.subplots(1,2, figsize=(12, 4), sharey=True)
+    fig.suptitle(f'{station_name}')
     ax[0].set_title('Entries')
     ax[1].set_title('Exits')
-    sns.heatmap(hm, cmap='Blues', xticklabels=xticks, ax=ax[0])
-    sns.heatmap(hm2, cmap='Blues', xticklabels=xticks, ax=ax[1])
+    sns.heatmap(hm, cmap='Blues', xticklabels=xticks, yticklabels=yticks, ax=ax[0])
+    sns.heatmap(hm2, cmap='Blues', xticklabels=xticks, yticklabels=yticks, ax=ax[1])
     
     fig.show()
+
+    
+# to run a loop with a DataFrame column named df['NAMES'] on each of the Names in the column:
+'''
+for i in df['NAMES']:
+      create_station_heatmap(i, turnstile_data)
+'''
