@@ -39,6 +39,7 @@ def read_mta_turnstile(start='20180501', end='20180531'):
 
     # group df into (CA, UNIT, SCP, STATION)
     df['date_time'] = pd.to_datetime(df.DATE + ' ' + df.TIME, format='%m/%d/%Y %H:%M:%S')
+    df['hour'] = df.date_time.dt.hour
     df.sort_values(by=['STATION','CA','UNIT','SCP','date_time'], inplace=True)
     df['entries_offset'] = df.groupby(['CA','UNIT','SCP','STATION'])['ENTRIES'].shift(-1) # get everything one row down and shift up
     df['exits_offset'] = df.groupby(['CA','UNIT','SCP','STATION'])['EXITS'].shift(-1)
@@ -50,6 +51,10 @@ def read_mta_turnstile(start='20180501', end='20180531'):
     df.loc[df.hourly_exits < 0,'hourly_exits'] = np.nan
     df.loc[df.hourly_entries > 100000,'hourly_entries'] = np.nan
     df.loc[df.hourly_exits > 100000,'hourly_exits'] = np.nan
+
+    # set entries data to floats
+    df.hourly_entries = df.hourly_entries.astype(float)
+    df.hourly_exits = df.hourly_exits.astype(float)
     
     # reset the indicies as they repeat for each download
     df.reset_index(inplace=True)
