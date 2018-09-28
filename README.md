@@ -1,3 +1,6 @@
+# Project
+First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist, Jason Salazer-Adamso Leo Liu & Spencer Tollefson
+ 
 # Flow of Data Analysis
 * [Presentation](/Toucans_Presentation.pdf)
 
@@ -12,10 +15,11 @@
 
 # Explanation of Standard Libraries
 * `from geopy.distance import geodesic` - Library to calculate the distance between to points with Lat/Long coordinates
+* `from mpl_toolkits.basemap import Basemap` - Library to plot maps and points on the maps
 * 
 
 # Data sources
 * MTA Turnstile Data - http://web.mta.info/developers/turnstile.html
 * MTA Station Data - https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49 (export data as csv)
-* Grace Hopper Companies - [tech_companies.csv](data/tech_companies.csv)
+* Grace Hopper Companies - https://ghc.anitab.org/2017-sponsorships/corporate-sponsors/ [tech_companies.csv](data/tech_companies.csv)
 
