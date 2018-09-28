@@ -4,13 +4,13 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
 # Flow of Data Analysis
 * [Presentation](/Toucans_Presentation.pdf)
 * [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) -
-* [find_schedule.ipynb](/find_schedule.ipynb) - 
+* [find_schedule.ipynb](/find_schedule.ipynb) - Test the funcationality of find_scheddule.py and output the schedule ready to be delivered
 * [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
-* [read_mta_stations.ipynb](/read_mta_stations.ipynb) -
+
 
 # Description of Functions
 
-* `find_schedule` - 
+* `find_schedule` - Generates a schedule for stations listed in the df_top.csv, which indicates when volunteers should be at these stations
 * `merge_station_company` - Function to merge MTA station master data with Grace Hopper company master data and calculate distance between station to company.
 * `read_mta_stations` - reads MTA masterlist of station coordinates into pandas DataFrame. Cleans formatting slightly.
 * `read_mta_turnstile` - Reads the MTA turnstile data from http://web.mta.info/developers/turnstile.html for a given date range and creates a data frame.
