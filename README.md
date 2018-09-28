@@ -3,6 +3,10 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
  
 # Flow of Data Analysis
 * [Presentation](/Toucans_Presentation.pdf)
+* [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) -
+* [find_schedule.ipynb](/find_schedule.ipynb) - 
+* [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
+* [read_mta_stations.ipynb](/read_mta_stations.ipynb) -
 
 # Description of Functions
 
