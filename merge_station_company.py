@@ -3,6 +3,15 @@ from geopy.distance import geodesic
 import pandas as pd
 
 def merge_station_company(stations, companies, turnstiles, thresh=0.25):
+    ''' Merges station and company dataframes into a single data frame. Calcualtes mean/max entries
+        from turnstile data. Filters the merged data frame to stations within a radius of thresh.
+
+        stations = df of MTA stations
+        companies = df of Grace Harper companies
+        turnstiles = df of MTA turnstile data over time
+
+        returns pd.DataFrame of the merged station/company data
+    '''
     # agg to station level taking the min lat/long
     station_agg = stations.groupby('name').min().reset_index()[['name','lon','lat']]
 
@@ -39,9 +48,7 @@ def merge_station_company(stations, companies, turnstiles, thresh=0.25):
     station_companies.name = station_companies.name.str.replace('3 AVE', '3 AV')
     station_companies.name = station_companies.name.str.replace('8 ST - NYU', '8 ST-NYU')
     station_companies.name = station_companies.name.str.replace('W 4 ST - WASHINGTON SQ (LOWER)	', 'W 4 ST-WASH SQ')
-    # station_companies.name = station_companies.name.str.replace('W 4 ST - WASHINGTON SQ (LOWER)', 'W 4 ST-WASH SQ')
-
-    
+     
     # calculate distance
     station_companies['distance'] = np.nan
     station_companies['comp_lat_lon'] = list(zip(station_companies.LAT, station_companies.LON))
@@ -54,7 +61,7 @@ def merge_station_company(stations, companies, turnstiles, thresh=0.25):
     station_mean = station_hour_day.groupby('STATION').mean().reset_index()
     station_max = station_hour_day.groupby('STATION').max().reset_index()
 
-    # be aware of data errors -- need to determine if further cleaning is needed. (2996/6622)
+    # Join the mean / max statistics to the station_company merged df.
     station_companies = station_companies.merge(station_mean, left_on='name', right_on='STATION', how='left')
     station_companies.rename(columns={'hourly_entries':'mean_entries'}, inplace=True)
 
