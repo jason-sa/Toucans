@@ -3,18 +3,10 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
  
 # Flow of Data Analysis
 * [Presentation](/Toucans_Presentation.pdf)
-<<<<<<< HEAD
-* [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) -
+* [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) - Notebook with EDA of relating stations, companies, turnstiles, and calculating a score for determining which station is close to which company. 
 * [find_schedule.ipynb](/find_schedule.ipynb) - Test the funcationality of find_scheddule.py and output the schedule ready to be delivered
 * [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
-
-=======
-* [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) - Notebook with EDA of relating stations, companies, turnstiles, and calculating a score for determining which station is close to which company. 
-* [find_schedule.ipynb](/find_schedule.ipynb) - 
-* [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
-* [read_mta_stations.ipynb](/read_mta_stations.ipynb) -
 * [NYC_map.ipynb](/NYC_map.ipynb) - plots outline of Manhattan with dots with geographic location points
->>>>>>> 7ee12adba94977bfae082a1c482bd793414bc428
 
 # Description of Functions
 
