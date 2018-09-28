@@ -11,3 +11,8 @@
 
 # Explanation of Standard Libraries
 
+# Data sources
+* MTA Turnstile Data - http://web.mta.info/developers/turnstile.html
+* MTA Station Data - https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49 (export data as csv)
+* Grace Hopper Companies - /data/tech_companies.csv
+
