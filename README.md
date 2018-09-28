@@ -14,5 +14,5 @@
 # Data sources
 * MTA Turnstile Data - http://web.mta.info/developers/turnstile.html
 * MTA Station Data - https://data.cityofnewyork.us/Transportation/Subway-Stations/arq3-7z49 (export data as csv)
-* Grace Hopper Companies - [tech_companies.csv](tech_companies.csv)
+* Grace Hopper Companies - [tech_companies.csv](data/tech_companies.csv)
 
