@@ -15,7 +15,6 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
 * `read_mta_stations` - reads MTA masterlist of station coordinates into pandas DataFrame. Cleans formatting slightly.
 * `read_mta_turnstile` - Reads the MTA turnstile data from http://web.mta.info/developers/turnstile.html for a given date range and creates a data frame.
 * `read_tech_companies` - takes 'tech_companies.csv' and enters into pandas DataFrame
-
 * `top_stations` - Calculates the top station/company pairs based on a column in a merge station_company data frame.
 * `create_station_heatmap` - This function inputs a **Name** of a MTA station and a **DataFrame** with complete, clean MTA turnstile count data. It outputs two heatmaps - one for Entries and one for Exits - that shows the highest conentrated passenger throughput by time of day (morning, midday, evening) and day of week.
 
