@@ -3,10 +3,18 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
  
 # Flow of Data Analysis
 * [Presentation](/Toucans_Presentation.pdf)
+<<<<<<< HEAD
 * [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) -
 * [find_schedule.ipynb](/find_schedule.ipynb) - Test the funcationality of find_scheddule.py and output the schedule ready to be delivered
 * [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
 
+=======
+* [Station_to_company_scoring.ipynb](/Station_to_company_scoring,ipynb) - Notebook with EDA of relating stations, companies, turnstiles, and calculating a score for determining which station is close to which company. 
+* [find_schedule.ipynb](/find_schedule.ipynb) - 
+* [HeatmapWork.ipynb](/HeatmapWork.ipynb) - Output of heatmaps used for presentation
+* [read_mta_stations.ipynb](/read_mta_stations.ipynb) -
+* [NYC_map.ipynb](/NYC_map.ipynb) - plots outline of Manhattan with dots with geographic location points
+>>>>>>> 7ee12adba94977bfae082a1c482bd793414bc428
 
 # Description of Functions
 
@@ -15,7 +23,7 @@ First project from Metis Fall 2018 Bootcamp (Project Benson) with Dana Lindquist
 * `read_mta_stations` - reads MTA masterlist of station coordinates into pandas DataFrame. Cleans formatting slightly.
 * `read_mta_turnstile` - Reads the MTA turnstile data from http://web.mta.info/developers/turnstile.html for a given date range and creates a data frame.
 * `read_tech_companies` - takes 'tech_companies.csv' and enters into pandas DataFrame
-* `NYC_map` - plots outline of Manhattan with dots with geographic location points
+
 * `top_stations` - Calculates the top station/company pairs based on a column in a merge station_company data frame.
 * `create_station_heatmap` - This function inputs a **Name** of a MTA station and a **DataFrame** with complete, clean MTA turnstile count data. It outputs two heatmaps - one for Entries and one for Exits - that shows the highest conentrated passenger throughput by time of day (morning, midday, evening) and day of week.
 
