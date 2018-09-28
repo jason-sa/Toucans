@@ -10,6 +10,8 @@
 * `top_stations` - Calculates the top station/company pairs based on a column in a merge station_company data frame.
 
 # Explanation of Standard Libraries
+* `from geopy.distance import geodesic` - Library to calculate the distance between to points with Lat/Long coordinates
+* 
 
 # Data sources
 * MTA Turnstile Data - http://web.mta.info/developers/turnstile.html
