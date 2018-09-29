@@ -4,7 +4,7 @@ def read_tech_companies():
 
     return pd.DataFrame(tech_company_name, lattitude, longitude)
     '''
-    companies = pd.read_csv("tech_companies.csv")
+    companies = pd.read_csv("data/tech_companies.csv")
     companies.drop(['ADDRESS'], axis=1, inplace=True)
     
     return(companies)
